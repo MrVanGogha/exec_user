@@ -92,5 +92,11 @@ public class UserController {
         return RestResult.success();
     }
 
+    //查询所有用户
+    @GetMapping("all")
+    public RestResult all(){
+        List<UserDto> all = userService.queryAll();
+        return RestResult.success(all);
+    }
 
 }

@@ -100,4 +100,9 @@ public class UserService {
         }, pageable);
         return users.map(user -> BeanConvert.convertBean(user, UserDto.class));
     }
+
+    public List<UserDto> queryAll() {
+        List<User> all = userDao.findAll();
+        return BeanConvert.convertList(all,UserDto.class);
+    }
 }
